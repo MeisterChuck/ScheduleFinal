@@ -103,7 +103,7 @@ public class ScheduleMainController implements Initializable{
     }
 
     @FXML void editEmployee(ActionEvent event) {
-
+        loadWindow("/ScheduleFinal/EditEmployees/EditEmployeesUI.fxml", "Edit Employee");
     }
 
     @FXML void fireEmployee(ActionEvent event) {
