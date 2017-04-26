@@ -1,0 +1,60 @@
+.saveButton{
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.saveButton:hover{
+    -fx-background-color: #81C784;
+    -fx-text-fill: white;
+}
+
+.saveButton:pressed{
+    -fx-background-color: #1B5E20;
+    -fx-text-fill: white;
+}
+
+.cancelButton{
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+.cancelButton:hover{
+    -fx-background-color: #e57373;
+    -fx-text-fill: white;
+}
+
+.cancelButton:pressed{
+    -fx-background-color: #b71c1c;
+    -fx-text-fill: white;
+}
+
+.theBackground{
+    -fx-background-color : #B3E5FC;
+}
+
+.textFieldBackground{
+    -fx-background-color: #81D4FA;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+.tab-pane
+{
+    -fx-tab-min-width:90px;
+}
+
+.tab{
+    -fx-background-insets: 0 1 0 1,0,0;
+}
+.tab-pane .tab
+{
+    -fx-background-color: #BFFFFC;
+
+}
+
+.tab-pane .tab:selected
+{
+    -fx-background-color: #81D4FA;
+}

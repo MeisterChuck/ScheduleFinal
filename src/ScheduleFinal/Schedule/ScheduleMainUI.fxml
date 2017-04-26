@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.StackedBarChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ScheduleFinal.Schedule.ScheduleMainController">
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab closable="false" text="Employees">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <center>
+                                <SplitPane dividerPositions="0.4531772575250836" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <TableView fx:id="employeeTableView" layoutX="18.0" layoutY="73.0" prefHeight="369.0" prefWidth="236.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <columns>
+                                                        <TableColumn fx:id="idColumn" prefWidth="63.0" text="ID" />
+                                                        <TableColumn fx:id="firstNameColumn" prefWidth="175.0" text="First Name" />
+                                                        <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last Name" />
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                </TableView>
+                                            </children>
+                                        </AnchorPane>
+                                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                            <center>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                                    <children>
+                                                        <Label text="Employee Information">
+                                                            <font>
+                                                                <Font size="18.0" />
+                                                            </font>
+                                                            <VBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </VBox.margin>
+                                                        </Label>
+                                                        <Separator prefWidth="200.0" />
+                                                        <GridPane>
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="109.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="324.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Label text="First Name:" GridPane.rowIndex="1">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label text="Last Name:" GridPane.rowIndex="2">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label text="Salary: " GridPane.rowIndex="3">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label text="Date of Hire:" GridPane.rowIndex="6">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label fx:id="salaryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                                <Label fx:id="dateOfHireLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                                    <GridPane.margin>
+                                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                                    </GridPane.margin>
+                                                                </Label>
+                                                <Label text="ID: ">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Email:" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label text="Phone:" GridPane.rowIndex="5">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                <Label fx:id="phoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <GridPane.margin>
+                                                      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                   </GridPane.margin>
+                                                </Label>
+                                                            </children>
+                                                        </GridPane>
+                                                    </children>
+                                                </VBox>
+                                            </center>
+                                            <bottom>
+                                                <HBox alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="200.0" spacing="10.0" BorderPane.alignment="CENTER">
+                                                    <children>
+                                                        <Button fx:id="hireButton" mnemonicParsing="false" onAction="#hireEmployee" prefWidth="100.0" styleClass="hireButton" stylesheets="@ScheduleMainUI.css" text="Hire">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Button fx:id="editButton" mnemonicParsing="false" onAction="#editEmployee" prefWidth="100.0" styleClass="editButton" stylesheets="@ScheduleMainUI.css" text="Edit">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Button>
+                                                        <Button fx:id="fireButton" mnemonicParsing="false" onAction="#fireEmployee" prefWidth="100.0" styleClass="fireButton" stylesheets="@ScheduleMainUI.css" text="Fire">
+                                                            <HBox.margin>
+                                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                            </HBox.margin>
+                                                        </Button>
+                                                    </children>
+                                                </HBox>
+                                            </bottom>
+                                        </BorderPane>
+                                    </items>
+                                </SplitPane>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+                <Tab closable="false" text="Schedule">
+                    <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                            <bottom>
+                                <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Button fx:id="calculateScheduleButton" mnemonicParsing="false" onAction="#calculateSchedule" prefWidth="150.0" styleClass="calculateButton" stylesheets="@ScheduleMainUI.css" text="Calculate Schedule">
+                                            <HBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </HBox.margin></Button>
+                                    </children>
+                                </HBox>
+                            </bottom>
+                            <top>
+                                <GridPane BorderPane.alignment="CENTER">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                            <children>
+                                                <Label text="Week's Budget: ">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="weekBudgetTextField">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                        <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                            <children>
+                                                <Label text="Truck Shipment:">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <RadioButton fx:id="truckShipmentOne" mnemonicParsing="false" text="1">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                    <toggleGroup>
+                                                        <ToggleGroup fx:id="TruckShipment" />
+                                                    </toggleGroup>
+                                                </RadioButton>
+                                                <RadioButton fx:id="truckShipmentTwo" mnemonicParsing="false" text="2" toggleGroup="$TruckShipment">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </RadioButton>
+                                                <RadioButton fx:id="truckShipmentThree" mnemonicParsing="false" text="3" toggleGroup="$TruckShipment">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </RadioButton>
+                                                <RadioButton fx:id="truckShipmentFour" mnemonicParsing="false" text="4" toggleGroup="$TruckShipment">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </RadioButton>
+                                                <RadioButton fx:id="truckShipmentFive" mnemonicParsing="false" text="5" toggleGroup="$TruckShipment">
+                                                    <HBox.margin>
+                                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                                    </HBox.margin>
+                                                </RadioButton>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </GridPane>
+                            </top>
+                            <center>
+                                <StackedBarChart fx:id="scheduleGraph" BorderPane.alignment="CENTER">
+                                    <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                    </xAxis>
+                                    <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                    </yAxis>
+                                </StackedBarChart>
+                            </center>
+                        </BorderPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
