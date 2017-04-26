@@ -30,7 +30,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ScheduleMainController implements Initializable{
@@ -100,19 +99,7 @@ public class ScheduleMainController implements Initializable{
     }
 
     @FXML void hireEmployee(ActionEvent event) {
-        try {
-            Parent parent = FXMLLoader.load(getClass().getResource("/ScheduleFinal/AddEmployees/AddEmployeesUI.fxml"));
-            Stage stage = new Stage(StageStyle.DECORATED);
-
-            stage.setTitle("Hire New Employee");
-            stage.setScene(new Scene((parent)));
-
-            stage.setResizable(false);
-
-            stage.show();
-        }catch(IOException e){
-            e.printStackTrace();
-        }
+        loadWindow("/ScheduleFinal/AddEmployees/AddEmployeesUI.fxml", "Hire Employee");
     }
 
     @FXML void editEmployee(ActionEvent event) {
@@ -127,7 +114,6 @@ public class ScheduleMainController implements Initializable{
 
     }
 
-    // Not used for hire employee to setResizable to false
     void loadWindow(String location, String title){
         try {
             Parent parent = FXMLLoader.load(getClass().getResource(location));
@@ -135,6 +121,8 @@ public class ScheduleMainController implements Initializable{
 
             stage.setTitle(title);
             stage.setScene(new Scene((parent)));
+            stage.setResizable(false);
+
             stage.show();
         }catch(IOException e){
             e.printStackTrace();

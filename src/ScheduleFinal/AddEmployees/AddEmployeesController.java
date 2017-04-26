@@ -97,6 +97,10 @@ public class AddEmployeesController implements Initializable{
             alert.setContentText("Failed");
             alert.showAndWait();
         }
+
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        stage.setResizable(false);
+        stage.close();
     }
 
     private void checkData(){

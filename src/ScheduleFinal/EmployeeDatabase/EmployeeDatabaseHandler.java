@@ -17,6 +17,13 @@ public class EmployeeDatabaseHandler {
         setupEndTimeTable();
     }
 
+    public void refresh(){
+        setupEmployeeTable();
+        setupProficiencyTable();
+        setupStartTimeTable();
+        setupEndTimeTable();
+    }
+
     // Allows the main class to share with all other classes
     public static EmployeeDatabaseHandler getInstance(){
         if(handler == null){
